@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Event } from './event';
+import { EventComponent } from './event';
 
 describe('Event', () => {
   let component: Event;

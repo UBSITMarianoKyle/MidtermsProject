@@ -1,1 +1,77 @@
-<p>interpolation works!</p>
+<div class="container mt-3">
+    <h3>String Interpolation</h3>
+    <p class="lead">Angular string interpolation is a one-way data binding technique that allows you to display dynamic data from your component's TypeScript code within your HTML template. It uses the double curly braces syntax <code>{{ text }}</code>.</p>
+  
+    <p class="lead">In Angular, string interpolation (also known as text interpolation) is a one-way data-binding technique used to display dynamic data from your TypeScript component in your HTML template.</p>
+  
+    <ol>
+      <li>Basic Characteristics</li>
+      <p>You embed expressions within double curly braces {{curly}}. Angular evaluates the expression and replaces it with the resulting string in the view.</p>
+      <ul>
+        <li>Component Property: To display a variable called userName, use {{ common }}.</li>
+        <li>Arithmetic: You can perform simple math like {{ 1 + 1 }}.</li>
+        <li>Methods: You can call component methods, such as {{ methods }}.</li>
+        <li>String Methods: Use JavaScript string functions like {{ title.toUpperCase() }}.</li>
+      </ul>
+  
+      <li>Working with Objects</li>
+      <ol type="a">
+        <p>You can access object properties directly within the curly braces.</p>
+        <li>Dot Notation: Use {{ dotnot }} to display a property.</li>
+        <li>Safe Navigation Operator (?.): Use this to guard against null or undefined values. Example: {{ dotnot2 }}.</li>
+        <li>JSON Pipe: Debug and see the entire object structure using {{ jpipe }}.</li>
+      </ol>
+    </ol>
+  
+    <h3>Rules and Constraints</h3>
+    <ul>
+      <li>The expression must return a value (string, number, boolean, object.property)</li>
+      <li>You CAN call pure methods and use pipes</li>
+      <li>You CANNOT use assignments (=), increment (++), or new keyword</li>
+      <li>You CANNOT access global objects like window or document directly</li>
+      <li>Expressions are re-evaluated every change detection cycle</li>
+    </ul>
+  
+    <!-- Green-themed card for examples -->
+    <div class="card text-white bg-success mb-3">
+      <div class="card-header">Interpolation</div>
+      <div class="card-body">
+        <h4 class="card-title">Examples</h4>
+        <p class="card-text">Here is an example showing how to access properties from objects and elements from arrays using string interpolation in an Angular Component.</p>
+  
+        <h2>A — String Interpolation <code>{{ curly }}</code></h2>
+        <p>Title: <strong>{{ title }}</strong></p>
+        <p>Student: {{ studentName }} | Course: {{ courseCode }}</p>
+        <p>Next year: {{ currentYear + 1 }}</p>
+        <p>{{ getWelcomeMessage() }}</p>
+        <p>Status: {{ isActive ? 'ACTIVE' : 'INACTIVE' }}</p>
+  
+        <h2>B — Interpolating Objects</h2>
+        <p>User Name: {{ user.name }}</p>
+        <p>User Position: {{ user.position }}</p>
+        <p>User Department: {{ user.department }}</p>
+        <p>User Role: {{ user.details.role }}</p>
+  
+        <h2>C — Iterating with Interpolation</h2>
+        <ul>
+          <li *ngFor="let skill of skills">{{ skill }}</li>
+        </ul>
+  
+        <h2>D — Select Roles</h2>
+        <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+          <option selected>Open this select menu</option>
+          <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+        </select>
+  
+        <h2>D — Interpolating Array of Objects</h2>
+        <select [(ngModel)]="selectedCountryId" class="form-select form-select-lg mb-3" aria-label="Large select example">
+          <option value="" disabled>Select a country</option>
+          <option *ngFor="let c of countries" [value]="c.id">{{ c.name }}</option>
+        </select>
+        <p>Selected ID: {{ selectedCountryId }}</p>
+  
+        <h2>E — Debugging with JSON Pipe</h2>
+        <pre>{{ user | json }}</pre>
+      </div>
+    </div>
+  </div>
