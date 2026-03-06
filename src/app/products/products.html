@@ -1,0 +1,53 @@
+<div class="mb-3 products-container">
+    <h1 class="text-success mb-4">Products List</h1>
+  
+    <!-- Products Table -->
+    <table class="table table-hover table-striped shadow-sm">
+      <thead class="table-success">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>
+            <span [ngClass]="{
+              'badge bg-success': product.status === 'Available',
+              'badge bg-danger': product.status === 'Out of Stock',
+              'badge bg-warning text-dark': product.status === 'Limited'
+            }">
+              {{ product.status }}
+            </span>
+          </td>
+          <td>₱{{ product.price | number:'1.2-2' }}</td>
+          <td>
+            <button class="btn btn-success btn-sm" (click)="viewProduct(product)">View</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Modal -->
+    <div class="modal" *ngIf="selectedProduct">
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h3 class="text-success">Product Details</h3>
+        <p><strong>ID:</strong> {{ selectedProduct.id }}</p>
+        <p><strong>Name:</strong> {{ selectedProduct.name }}</p>
+        <p><strong>Category:</strong> {{ selectedProduct.category }}</p>
+        <p><strong>Price:</strong> ₱{{ selectedProduct.price | number:'1.2-2' }}</p>
+        <p><strong>Stock:</strong> {{ selectedProduct.stock }}</p>
+        <p><strong>Status:</strong> {{ selectedProduct.status }}</p>
+        <p><strong>Description:</strong> {{ selectedProduct.description }}</p>
+        <p><strong>Expiry Date:</strong> {{ selectedProduct.expiryDate }}</p>
+        <p><strong>Calories:</strong> {{ selectedProduct.calories }} kcal</p>
+        <p><strong>Ingredients:</strong> {{ selectedProduct.ingredients }}</p>
+      </div>
+    </div>
+  </div>
