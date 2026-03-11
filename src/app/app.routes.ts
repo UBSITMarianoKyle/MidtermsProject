@@ -10,7 +10,9 @@ import { Style } from './databinding/style/style';
 import { Twoway } from './databinding/twoway/twoway';
 import { EventComponent } from './databinding/event/event';
 import { ProductsComponent } from './products/products';
-
+import { LiteralMapSpreadAssignment } from '../../node_modules/@angular/compiler/types/compiler';
+import { ProductList } from './products/products-list/products-list';
+import { ProductDetails } from './products/product-details/product-details';
 
 
 
@@ -23,6 +25,18 @@ export const routes: Routes = [
     {path :'Property',component:Property},
     {path :'Style',component:Style},
     {path :'Twoway',component:Twoway},
-    {path :'Products',component:ProductsComponent}
+    {path :'Products',component:ProductsComponent},
+  
 
-];
+    { path: 'products1',component: ProductList,children: [{
+            path: ':id',
+            children: [
+              { path: 'Details1', component: ProductDetails }
+            ]
+          }
+        ]
+      },
+    
+     
+
+    ];

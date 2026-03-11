@@ -25,7 +25,7 @@ export class ProductsComponent {
 
   selectedProduct: Product | null = null;
 
-  // Methods
+  
   viewProduct(product: Product) {
     this.selectedProduct = product;
   }
