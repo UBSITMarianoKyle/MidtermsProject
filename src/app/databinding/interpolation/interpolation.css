@@ -1,0 +1,105 @@
+/* Cyberpunk Section */
+.cyber-section {
+  background: #0a0a1f;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 15px #00ffff;
+  color: #e0e0ff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Headings */
+.cyber-title {
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+}
+
+/* Lead text */
+.cyber-lead {
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+/* Inline code */
+.cyber-code {
+  background: #111122;
+  padding: 2px 5px;
+  border-radius: 4px;
+  color: #ff00ff;
+  text-shadow: 0 0 3px #ff00ff;
+}
+
+/* Cards */
+.cyber-card {
+  background: #111122;
+  border: 1px solid #ff00ff;
+  box-shadow: 0 0 15px #ff00ff;
+  color: #e0e0ff;
+}
+
+.cyber-card-header {
+  background: linear-gradient(90deg,#ff00ff,#00ffff);
+  color: #0a0a1f;
+  text-shadow: 0 0 8px #fff;
+}
+
+.cyber-card-body {
+  color: #e0e0ff;
+}
+
+/* Tables */
+.cyber-table {
+  background: #0a0a1f;
+  color: #00ffff;
+  border: 1px solid #00ffff;
+}
+
+.cyber-table th {
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  color: #0a0a1f;
+  text-shadow: 0 0 5px #fff;
+}
+
+.cyber-table td {
+  border: 1px solid #00ffff;
+}
+
+/* Inputs and Selects */
+input.form-control,
+select.form-select,
+textarea.form-control {
+  background: #111122;
+  border: 1px solid #00ffff;
+  color: #e0e0ff;
+}
+
+input.form-control:focus,
+select.form-select:focus,
+textarea.form-control:focus {
+  box-shadow: 0 0 10px #00ffff;
+  border-color: #ff00ff;
+  outline: none;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(90deg,#ff00ff,#00ffff);
+  border: none;
+  color: #0a0a1f;
+  font-weight: bold;
+  text-shadow: 0 0 5px #fff;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 15px #ff00ff;
+}
+
+/* Color swatches */
+.color-swatch {
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-top: 5px;
+  box-shadow: 0 0 8px #00ffff inset;
+}

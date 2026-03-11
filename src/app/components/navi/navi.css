@@ -1,0 +1,63 @@
+/* Cyberpunk Navbar */
+.cyber-navbar {
+  background: linear-gradient(90deg, #050510, #0f0f2d);
+  border-bottom: 2px solid #00ffff;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+/* Brand */
+.cyber-brand {
+  font-family: 'Orbitron', sans-serif;
+  color: #ff00ff !important;
+  text-shadow: 0 0 10px #ff00ff;
+  font-size: 22px;
+}
+
+/* Links */
+.cyber-link {
+  color: #00ffff !important;
+  transition: 0.3s;
+}
+
+.cyber-link:hover {
+  color: #ff00ff !important;
+  text-shadow: 0 0 8px #ff00ff;
+}
+
+/* Dropdown */
+.cyber-dropdown {
+  background: #0a0a1a;
+  border: 1px solid #00ffff;
+}
+
+.cyber-dropdown .dropdown-item {
+  color: #00ffff;
+}
+
+.cyber-dropdown .dropdown-item:hover {
+  background: #111133;
+  color: #ff00ff;
+}
+
+/* Search Input */
+.cyber-input {
+  background: #0a0a1a;
+  border: 1px solid #00ffff;
+  color: white;
+}
+
+.cyber-input:focus {
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* Button */
+.cyber-btn {
+  background: linear-gradient(90deg,#ff00ff,#00ffff);
+  border: none;
+  color: black;
+  font-weight: bold;
+}
+
+.cyber-btn:hover {
+  box-shadow: 0 0 15px #ff00ff;
+}
