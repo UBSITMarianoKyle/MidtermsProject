@@ -1,49 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
+import { CommonModule, DecimalPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Product } from '../../Models/Product.interface';
 import { ProductsService } from '../../services/ProductsService';
-import { FormsModule }  from '@angular/forms';
-import { CommonModule}  from '@angular/common';
+import { ProductDetails } from '../product-details/product-details';
+
 @Component({
-  selector: 'app-product-details',
-  imports: [FormsModule, CommonModule, RouterLink, RouterOutlet],
+  selector: 'app-product-list',
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    DecimalPipe,
+    ProductDetails  // to render details below table
+  ],
   templateUrl: './products-list.html',
-  styleUrl: './products-list.css',
+  styleUrls: ['./products-list.css']
 })
-export class ProductList implements OnInit{
+export class ProductList implements OnInit {
+  products: Product[] = [];
+  selectedProduct: Product | null = null;  // product to show below table
 
-  products: Product [] = [];
-  returnUrls: string | null =null;
-  
-  selectedId:number|null =null;
+  constructor(private productService: ProductsService) {}
 
-  constructor(
-    private productService: ProductsService,
-    private route: ActivatedRoute,
-    private router: Router
-){}
+  ngOnInit(): void {
+    this.products = this.productService.getProducts();
+  }
 
-ngOnInit(): void {
-  this.products = this.productService.getProducts();
-
+  openProductDetails(product: Product) {
+    // Toggle selection — clicking the same product again hides it
+    this.selectedProduct = this.selectedProduct?.id === product.id ? null : product;
+  }
 }
-
-getProduct(p:Product): void {
-this.selectedId = p.id;
-this.router.navigate(['/products1', p.id, 'Details']);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-

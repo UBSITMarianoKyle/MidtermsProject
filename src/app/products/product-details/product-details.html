@@ -1,16 +1,23 @@
-<div class="modal" *ngIf="selectedProduct">
-    <div class="modal-content">
-      <span class="close" (click)="closeModal()">&times;</span>
-      <h3 class="text-success">Product Details</h3>
-      <p><strong>ID:</strong> {{ selectedProduct.id }}</p>
-      <p><strong>Name:</strong> {{ selectedProduct.name }}</p>
-      <p><strong>Category:</strong> {{ selectedProduct.category }}</p>
-      <p><strong>Price:</strong> ₱{{ selectedProduct.price | number:'1.2-2' }}</p>
-      <p><strong>Stock:</strong> {{ selectedProduct.stock }}</p>
-      <p><strong>Status:</strong> {{ selectedProduct.status }}</p>
-      <p><strong>Description:</strong> {{ selectedProduct.description }}</p>
-      <p><strong>Expiry Date:</strong> {{ selectedProduct.expiryDate }}</p>
-      <p><strong>Calories:</strong> {{ selectedProduct.calories }} kcal</p>
-      <p><strong>Ingredients:</strong> {{ selectedProduct.ingredients }}</p>
-    </div>
-  </div>
+<div class="product-details mt-4 p-3 border border-success rounded bg-light">
+  <h4 class="text-success mb-3">Product Details</h4>
+
+  <p><strong>ID:</strong> {{ product.id }}</p>
+  <p><strong>Name:</strong> <input [(ngModel)]="product.name" class="form-control" /></p>
+  <p><strong>Category:</strong> <input [(ngModel)]="product.category" class="form-control" /></p>
+  <p><strong>Price:</strong> <input type="number" [(ngModel)]="product.price" class="form-control" /></p>
+  <p><strong>Stock:</strong> <input type="number" [(ngModel)]="product.stock" class="form-control" /></p>
+  <p>
+    <strong>Status:</strong>
+    <select [(ngModel)]="product.status" class="form-select">
+      <option value="Available">Available</option>
+      <option value="Out of Stock">Out of Stock</option>
+      <option value="Limited">Limited</option>
+    </select>
+  </p>
+  <p><strong>Description:</strong> <textarea [(ngModel)]="product.description" class="form-control"></textarea></p>
+  <p><strong>Expiry Date:</strong> <input type="date" [(ngModel)]="product.expiryDate" class="form-control" /></p>
+  <p><strong>Calories:</strong> <input type="number" [(ngModel)]="product.calories" class="form-control" /></p>
+  <p><strong>Ingredients:</strong> <input [(ngModel)]="product.ingredients" class="form-control" /></p>
+
+  <button class="btn btn-success mt-2" (click)="saveProduct()">Save</button>
+</div>

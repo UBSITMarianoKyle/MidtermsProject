@@ -1,0 +1,28 @@
+<!-- src/app/components/supplier-details/supplier-details.html -->
+<div *ngIf="supplier" class="supplier-details">
+  <h2>Supplier Details</h2>
+
+  <label>ID</label>
+  <input type="text" class="form-control" [(ngModel)]="supplier.id" readonly />
+
+  <label>Supplier Name</label>
+  <input type="text" class="form-control" [(ngModel)]="supplier.supplierName" />
+
+  <label>Location</label>
+  <input type="text" class="form-control" [(ngModel)]="supplier.location" />
+
+  <label>Email</label>
+  <input type="email" class="form-control" [(ngModel)]="supplier.email" />
+
+  <label>Contact Person</label>
+  <input type="text" class="form-control" [(ngModel)]="supplier.contactPerson" />
+
+  <label>Phone</label>
+  <input type="text" class="form-control" [(ngModel)]="supplier.phone" />
+
+  <label>Products Supplied (comma-separated)</label>
+  <textarea class="form-control" [(ngModel)]="productsSuppliedString"></textarea>
+
+  <button (click)="saveChanges()" class="btn btn-success mt-2">Save</button>
+  <button (click)="goBack()" class="btn btn-secondary mt-2 ms-2">Back</button>
+</div>

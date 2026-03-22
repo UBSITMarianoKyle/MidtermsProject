@@ -1,35 +1,23 @@
-import { Component } from '@angular/core';
-import { CommonModule, DecimalPipe } from '@angular/common'; // For *ngIf, number pipe
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { Product } from '../../Models/Product.interface';
 import { ProductsService } from '../../services/ProductsService';
 
 @Component({
   selector: 'app-product-details',
-  standalone: true, // optional, if using standalone component
-  imports: [CommonModule, FormsModule, DecimalPipe],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './product-details.html',
-  styleUrls: ['./product-details.css'], // fixed typo: styleUrls
+  styleUrls: ['./product-details.css'],
 })
 export class ProductDetails {
-
-  // The product currently displayed in the modal
-  selectedProduct: Product | null = null;
+  @Input() product!: Product;
 
   constructor(private productService: ProductsService) {}
 
-  // Method to open modal for a specific product
-  openModal(productId: number): void {
-    const product = this.productService.getProduct(productId);
-    if (product) {
-      this.selectedProduct = product;
-    }
+  saveProduct() {
+    this.productService.updateProduct(this.product);
+    alert('Product updated successfully!');
   }
-
-  // Method to close the modal
-  closeModal(): void {
-    this.selectedProduct = null;
-  }
-
 }

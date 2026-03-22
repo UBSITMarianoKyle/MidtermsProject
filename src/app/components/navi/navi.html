@@ -17,15 +17,32 @@
           <a class="nav-link cyber-link active" routerLink="Products">Products</a>
         </li>
 
+        <!-- ✅ Supplier List -->
+        <li class="nav-item">
+          <a class="nav-link cyber-link active" routerLink="/suppliers">
+            Supplier List
+          </a>
+        </li>
+
         <!-- Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle cyber-link" data-bs-toggle="dropdown">Others</a>
           <div class="dropdown-menu cyber-dropdown">
+
             <a class="dropdown-item" routerLink="Class">Class</a>
             <a class="dropdown-item" routerLink="Attribute">Attribute</a>
             <a class="dropdown-item" routerLink="Style">Style</a>
+
+            <!-- Existing -->
             <a class="dropdown-item" routerLink="products1">Product List</a>
-            <a class="dropdown-item" routerLink="Details1">Product Details</a>
+
+            <div class="dropdown-divider"></div>
+
+            <!-- ⚠️ OPTIONAL: Demo Supplier Details -->
+            <a class="dropdown-item" routerLink="/suppliers/1">
+              Supplier Details (Sample)
+            </a>
+
           </div>
         </li>
 
